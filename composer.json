@@ -1,22 +1,26 @@
 {
-    "name": "antenordev/api",
-    "description": "Component Api for Begginers",
-    "version": "0.0.1",
-    "keywords": ["api", "api-php", "php"],
-    "license": "MIT",
-    "authors": [
-        {
-            "name" : "Antenor Pires",
-            "role": "Developer",
-            "homepage": "https://antenor.dev"
-        }
-    ],
-    "autoload": {
-        "psr-4": {
-            "Api\\" : "src/"
-        }
-    },
-    "require": {
-        "php" : ">=7.4"
+  "name": "antenordev/api",
+  "description": "Component Api for Begginers",
+  "version": "0.1.0",
+  "keywords": [
+    "api",
+    "api-php",
+    "php"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Antenor Pires",
+      "role": "Developer",
+      "homepage": "https://github.com/antenordev"
     }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Api\\": "src/"
+    }
+  },
+  "require": {
+    "php": ">=7.4"
+  }
 }
