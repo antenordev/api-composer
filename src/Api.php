@@ -2,22 +2,39 @@
 
 namespace App\Api;
 
-use Crapit\App\Rest;
+use App\Json;
 
-class Api extends Rest {
-  function savePost() {
-    return null;
+class Api {
+  function post() {
+    return 'post';
   }
 
-  function saveGet() {
-    return null;
+  function find($entity) {
+
+    if($entity == "foobar") {
+      $data = array(
+        ['id'=>1, 'name'=> 'foo'],
+        ['id'=>2, 'name'=> 'bar']
+      );
+
+      /* echo Json::parseJson(
+          true, // Boolean Status
+          $data // Data Array
+        ); */
+      var_dump(new Json());
+    }
+
   }
 
-  function savePut() {
-    return null;
+  function findOne() {
+    return 'get';
   }
 
-  function saveDelete() {
-    return null;
+  function put() {
+    return 'put(post)';
+  }
+
+  function delete() {
+    return 'delete(post)';
   }
 }

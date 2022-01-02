@@ -4,12 +4,12 @@ namespace App\Json;
 
 class Json {
   /**
-   * Method json static
+   * Method parseJson static
    * @param boolean $status status
    * @param array $data data
    */
-  public static function json($status, $data) {
-    echo json_encode(array(
+  public static function parseJson($status, $data) {
+    return json_encode(array(
       "status" => $status,
       "data" => $data
     ));

@@ -7,10 +7,10 @@ use App\Json;
 
 class Rest {
   /**
-   * Method open request
+   * Method openRequest request
    * @param string $request url
    */
-  public static function open($request) {
+  public static function openRequest($request) {
     $url = explode('/', $request['url']);
     $class = ucfirst($url[0]);
     array_shift($url);
@@ -19,33 +19,33 @@ class Rest {
     $params = array();
     $params = $url;
 
-    // Test request
+    // Testing Request
     try {
       if (class_exists($class)) {
         if (method_exists($class, $method)) {
           return
-            Json::json(
+            Json::parseJson(
               true,
-              call_user_func_array(array(new $class, $method),$params)
+              call_user_func_array(array(new $class, $method), $params)
             );
         }
         return
-          Json::json(
+          Json::parseJson(
             true,
             get_class_methods($class)
           );
       } else {
         return
-          Json::json(
+          Json::parseJson(
             false,
             'Class not found!'
         );
       }
-    } catch (Exception $e) {
+    } catch (Exception $error) {
       return
-        Json::json(
+        Json::parseJson(
           false,
-          $e->getMessage()
+          $error->getMessage()
         );
     }
   }
